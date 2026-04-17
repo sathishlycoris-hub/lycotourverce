@@ -104,18 +104,18 @@ const PackageBooking = () => {
   const validatePassengerForm = () => {
     const newErrors: Record<string, string> = {};
 
-    // state.passengers.forEach((p, i) => {
-    //   if (!p.name.trim()) newErrors[`name_${i}`] = "Name is required";
-    //   else if (!/^[a-zA-Z\s]+$/.test(p.name.trim())) newErrors[`name_${i}`] = "Only letters allowed";
+    state.passengers.forEach((p, i) => {
+      if (!p.name.trim()) newErrors[`name_${i}`] = "Name is required";
+      else if (!/^[a-zA-Z\s]+$/.test(p.name.trim())) newErrors[`name_${i}`] = "Only letters allowed";
       
-    //   if (!p.gender) newErrors[`gender_${i}`] = "Select gender";
+      if (!p.gender) newErrors[`gender_${i}`] = "Select gender";
       
-    //   if (!p.age) newErrors[`age_${i}`] = "Age is required";
-    //   else {
-    //     const age = typeof p.age === 'number' ? p.age : parseInt(p.age as string);
-    //     if (age < 1 || age > 100) newErrors[`age_${i}`] = "Invalid age";
-    //   }
-    // });
+      if (!p.age) newErrors[`age_${i}`] = "Age is required";
+      else {
+        const age = typeof p.age === 'number' ? p.age : parseInt(p.age as string);
+        if (age < 1 || age > 100) newErrors[`age_${i}`] = "Invalid age";
+      }
+    });
 
     if (!state.contactInfo.name.trim()) newErrors.contactName = "Name is required";
     if (!state.contactInfo.mobile.trim() || state.contactInfo.mobile.length !== 10) {
@@ -464,13 +464,13 @@ const PackageBooking = () => {
               )}
 
               {/* Passenger Details Step */}
-              {/* {step === "booking" && (
+              {step === "booking" && (
                 <PassengerForm
                   passengers={state.passengers}
                   onUpdatePassenger={updatePassenger}
                   errors={errors}
                 />
-              )} */}
+              )}
 
               
               

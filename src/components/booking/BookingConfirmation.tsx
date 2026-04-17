@@ -60,7 +60,7 @@ export function BookingConfirmation({ booking }: BookingConfirmationProps) {
         </div>
 
         {/* Passengers List */}
-        {/* <div className="border-t pt-4">
+        <div className="border-t pt-4">
           <h3 className="font-medium mb-3">Passengers</h3>
           <div className="bg-secondary/30 rounded-lg overflow-hidden">
             <table className="w-full text-sm">
@@ -84,7 +84,7 @@ export function BookingConfirmation({ booking }: BookingConfirmationProps) {
               </tbody>
             </table>
           </div>
-        </div> */}
+        </div>
 
         {/* Payment Summary */}
         <div className="border-t pt-4">
