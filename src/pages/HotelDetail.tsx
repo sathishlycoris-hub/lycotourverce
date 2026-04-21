@@ -247,7 +247,7 @@ export default function HotelDetail() {
                     onClick={goBack}
                     disabled={step === 1}
                   >
-                    <ArrowLeft className="h-4 w-4 mr-1" /> Back
+                    {/* <ArrowLeft className="h-4 w-4 mr-1" /> Back */}
                   </Button>
                   {step < 4 ? (
                     <Button onClick={goNext} variant="editorial">
@@ -433,14 +433,14 @@ function Step1Rooms({
                 />
               </div>
               <div>
-                <h4 className="font-serif text-lg text-primary">{room.name}</h4>
-                <p className="text-xs text-muted-foreground mb-2">
+                <h4 className="font-serif text-2xl text-primary">{room.name}</h4>
+                <p className="text-md text-muted-foreground mb-2">
                   {room.size} · {room.bed} ·{" "}
                   <span className="inline-flex items-center gap-1">
                     <Users className="h-3 w-3" /> {room.capacity} guests
                   </span>
                 </p>
-                <p className="text-sm text-foreground/80 mb-3">
+                <p className="text-md text-foreground/80 mb-3">
                   {room.description}
                 </p>
                 <div className="flex flex-wrap gap-1.5">
@@ -451,7 +451,7 @@ function Step1Rooms({
                     return (
                       <span
                         key={a}
-                        className="inline-flex items-center gap-1 text-[11px] bg-secondary text-secondary-foreground px-2 py-1 rounded-full"
+                        className="inline-flex items-center gap-1 text-sm bg-secondary text-secondary-foreground px-2 py-1 rounded-full"
                       >
                         <Icon className="h-3 w-3" />
                         {meta.label}
